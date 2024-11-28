@@ -1,38 +1,40 @@
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
-<!--  If necessary, please modify the charset parameter to specify the        -->
-<!--  character set of your HTML page.                                        -->
-<!--  ----------------------------------------------------------------------  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Test Drive Form</title>
+</head>
+<body>
+    <h1>Request a Test Drive</h1>
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+        <!-- Salesforce Organization ID -->
+        <input type="hidden" name="oid" value="00Dd20000052ZGe">
+        
+        <!-- Redirect URL -->
+        <input type="hidden" name="retURL" value="https://www.bmw.com/test-drive-thank-you">
 
-<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+        <!-- Debugging (Uncomment during testing) -->
+        <!-- <input type="hidden" name="debug" value="1"> -->
+        <!-- <input type="hidden" name="debugEmail" value="siyanda.ngange@digitalcareerinstitute.org"> -->
 
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <FORM> element to your page.             -->
-<!--  ----------------------------------------------------------------------  -->
+        <!-- Form Fields -->
+        <label for="first_name">First Name:</label>
+        <input id="first_name" name="first_name" maxlength="40" size="20" type="text" required><br>
 
-<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dd20000052ZGe" method="POST">
+        <label for="last_name">Last Name:</label>
+        <input id="last_name" name="last_name" maxlength="80" size="20" type="text" required><br>
 
-<input type=hidden name="oid" value="00Dd20000052ZGe">
-<input type=hidden name="retURL" value="https://www.bmw.com/test-drive-thank-you.">
+        <label for="email">Email:</label>
+        <input id="email" name="email" maxlength="80" size="20" type="email" required><br>
 
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-<!--  these lines if you wish to test in debug mode.                          -->
-<!--  <input type="hidden" name="debug" value=1>                              -->
-<!--  <input type="hidden" name="debugEmail"                                  -->
-<!--  value="siyanda.ngange@digitalcareerinstitute.org">                      -->
-<!--  ----------------------------------------------------------------------  -->
+        <label for="mobile">Mobile:</label>
+        <input id="mobile" name="mobile" maxlength="40" size="20" type="tel"><br>
 
-<label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
+        <label for="city">City:</label>
+        <input id="city" name="city" maxlength="40" size="20" type="text"><br>
 
-<label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
-
-<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
-
-<label for="mobile">Mobile</label><input  id="mobile" maxlength="40" name="mobile" size="20" type="text" /><br>
-
-<label for="city">City</label><input  id="city" maxlength="40" name="city" size="20" type="text" /><br>
-
-<input type="submit" name="submit">
-
-</form>
+        <input type="submit" value="Submit Form">
+    </form>
+</body>
+</html>
